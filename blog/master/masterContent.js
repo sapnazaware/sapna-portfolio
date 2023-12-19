@@ -8,8 +8,8 @@ var TopNav = `<div class="header-section section" id="header-section" name="Head
         </div>
         <div class="widget LinkList" data-version="2" id="LinkList99">
         <div class="menu-widget">
-            <span class="menu-item"><a href="/">Home</a></span><span class="menu-item"><a
-                href="https://webium-blogger.blogspot.com/p/webium-documentations.html">Documentation</a></span>
+            <span class="menu-item"><a href="blog/Chapter1/blogch1.html">Home</a></span><span class="menu-item"><a
+                href="index.html">Documentation</a></span>
         </div>
         <button aria-label="Menu" class="button-icon menu" type="button"><svg height="24" viewBox="0 0 384.97 384.97"
             width="24">
