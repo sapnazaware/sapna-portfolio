@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="../master/master.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+      <div class="content">
+
+
+        <header id="TopNav" class="header-wrapper">
+          <!---REPLACED BY MASTER-->
+        </header>
+    
+        <div class="header">
+          <h2>Chapter 2 : AEM architecture</h2>
+        </div>
+    
+    
+        <div class="row">
+          <div class="leftcolumn">
+            <div class="card">
+    
+              <div class="postheading-drc">
+                <h5>A quick overview about Adobe Experience Manager.</h5>
+              </div>
+              
+              <div class="post-meta">
+                <div class="meta-author-date">
+                  <div id="avatar" class="avatar">
+                    <!---REPLACED BY MASTER-->
+                  </div>
+    
+                  <div class="post-meta-top">
+                    <span id="post-author" class="post-author">
+                      <!---REPLACED BY MASTER-->
+                    </span> <br />
+                    <span class="post-time"><time class="published" datetime="2021-03-02T08:34:00-08:00">
+                      December 10 ,2023</time></span>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="clearer"></div>
+    
+              <div id="aem-img" class="fakeimg"></div>
+
+     
+
+              <ul>                
+                    <li>
+                      <p>
+                      <blockquote>
+                        <h2> Java Runtime Environment (JRE) Requirement</h2>
+                          AEM operates as a Java-based web application, necessitating the presence of a server-side Java Runtime Environment (JRE) for proper functioning.                      
+                      </blockquote>
+                    </p>
+                    </li>
+
+                    <li>
+                      <h2>
+                        Granite Platform
+                        <img alt="AEM architecture " src="img/ch2img2.png" />
+                      </h2>
+                      <p>
+                        Granite Platform, Adobe's open web stack, serves as the technical foundation for AEM. <br>
+                        It also provides the fundamental UI framework with the following key objectives:
+                      </p>
+                        <ul>
+                        <li> Offering granular UI widgets.</li>
+                        <li>Implementing best UI practices.</li>
+                        <li> Providing an extensible UI. </li>
+                      </ul>
+                    </li> 
+                    
+                    
+                  <li>
+                    <h2>
+                        OSGi Framework
+                      <img alt="AEM architecture " src="img/ch2img3.png" />
+                      </h2>
+
+                      <p>
+                        The OSGi framework is comprised of specifications that define a component and the model for Java.  <br>
+                        One of OSGi's key advantages is its ability to allow each product segment to define its API with a set of exported Java bundles, specifying its required dependencies. <br>
+                        Segments and services can be dynamically installed, activated, deactivated, refreshed, and uninstalled.
+                        Various implementations of OSGi specifications exist, such as Eclipse Equinox, OSGi, or Apache Felix.  <br>
+                        AEM incorporates Apache Felix in its technology stack.
+
+                      </p>
+
+                  </li>
+
+                  <li>
+                      <h2> Java Content Repository (JCR)</h2>
+                      <p>
+                        The JCR combines the features of file systems and RDBMS, aiming to provide the best of both worlds. <br>
+                        As per JSR 283, "the Java Content Repository API defines an abstract model and a Java API for data storage and related services that are commonly used by content-oriented applications." <br>
+                        The JCR storage model consists of a tree of nodes and properties. <br>
+                        Nodes organize the content, and named properties store the actual data, either as real data (string, boolean, number, etc.) or as binary streams for storing files of arbitrary size. <br>
+                        AEM 6.x utilizes Apache Oak as the JCR implementation.
+                      </p>
+                  </li>
+                  
+                  <li>
+                      <h2>Apache Sling</h2>
+                      <p>AEM is developed using Sling, a web application framework based on REST principles that facilitates the streamlined development of content-oriented applications.<br>
+                        Sling uses a JCR repository, such as Apache Jackrabbit or, in the case of AEM, the CRX Content Repository, as its data store. <br>
+                        According to Apache Sling's official documentation, Sling maps HTTP request URLs to content resources based on the request's path, extensions, and selectors.<br>
+                        Emphasizing convention over configuration, requests are handled by scripts and servlets dynamically selected based on the current resource.<br>
+                        This enables meaningful URLs and resource-driven request processing, while Sling's modular nature allows specific server instances to include relevant information. Consequently, anything present in the JCR can be accessed in a RESTful manner through HTTP requests.
+                        </p>
+                  </p>
+                </li>
+          </ul>
+
+          </div>
+          </div>
+
+        </div>
+    
+    
+        <div class="post-footer">
+              <div class="footer-post-content">
+    
+                  <div class="post-tags">
+                    <a class="label-link" href="/#ß"
+                      rel="tag">Marketing</a>
+                    <a class="label-link" href="/#"
+                      rel="tag">Technology</a>
+                  </div>
+                  
+                  <div id="MetaButtons" class="post-meta">
+                      <!---REPLACED BY MASTER-->
+                  </div>
+    
+                  <div id="AboutAuthor" class="about-author">
+                    <!---REPLACED BY MASTER-->
+                  </div>
+    
+              </div>
+        </div>
+    
+      </div>
+    
+      <div id="SiteFooter" class="footer">
+        <!---REPLACED BY MASTER-->
+      </div>
+
+
+
+
+
+</body>
+
+
+
+<script src="../master/masterContent.js"></script>
+<script src="../master/master.js"></script>
+
+<!--html injection -->

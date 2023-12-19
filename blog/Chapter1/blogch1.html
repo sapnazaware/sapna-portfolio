@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="../master/master.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="content">
+
+
+    <header id="TopNav" class="header-wrapper">
+      <!---REPLACED BY MASTER-->
+    </header>
+
+    <div class="header">
+      <h2>Chapter 1 : OverView of AEM</h2>
+    </div>
+
+
+    <div class="row">
+      <div class="leftcolumn">
+        <div class="card">
+
+          <div class="postheading-drc">
+            <h5>A quick overview about Adobe Experience Manager.</h5>
+          </div>
+          
+          <div class="post-meta">
+            <div class="meta-author-date">
+              <div id="avatar" class="avatar">
+                <!---REPLACED BY MASTER-->
+              </div>
+
+              <div class="post-meta-top">
+                <span id="post-author" class="post-author">
+                  <!---REPLACED BY MASTER-->
+                </span> <br />
+                <span class="post-time"><time class="published" datetime="2021-03-02T08:34:00-08:00">
+                  December 10 ,2023</time></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="clearer"></div>
+
+          <div class="fakeimg"> <img alt="AEM image " src="img/aem_banner.jpeg" /></div>
+
+          <p>
+              <h1> AEM OVERVIEW </h1>
+              AEM, a Content Management System (CMS), is employed for crafting and launching commercial websites. Its
+              framework empowers users to precisely manage content on public sites, effortlessly manipulate site content,
+              and cache content for expedited delivery.
+              <br>
+              <h2> 1] Standard AEM Configuration</h2> <br>
+              <blockquote> The quantity of AEM instances may differ across environments, yet a complete AEM setup generally
+                includes </blockquote><br>
+              <ol>
+                <li> Author instance</li>
+                <li>Publish instance</li>
+                <li>Dispatcher</li>
+                <li>Load Balancer. </li>
+              </ol>
+              <br>
+              Each component has a specific function in managing and facilitating access to user-created content. In
+              numerous scenarios, particularly in production, multiple publish instances and dispatchers are employed to
+              ensure redundancy, enhance performance, and accommodate heightened traffic to the site.
+              <br>
+              Setting up an AEM instance can be done in two ways:
+              <br>
+
+              <h2>2] AEM on Prem: </h2>
+              <ol>
+                <li>Involves significant costs for licensing and infrastructure management.</li>
+                <li> Requires vigilant ownership as clients manage most aspects.</li>
+                <li> Upgrades is a challenging task.</li>
+                <li>Code deployment can utilize Continuous Integration (CI) tools like Jenkins, Bamboo, ACM, etc.</li>
+              </ol>
+
+              AEM as a Cloud Service:
+              Operates as Software as a Service (SaaS), primarily managed by Adobe.
+              Features an architecture that auto-scales to accommodate additional instances as needed.
+              Reduces ownership costs since server, space, and upgrades are handled by Adobe.
+              Adobe recommends using their managed CDN, with client CDN pointing to it.
+              Cloud Manager, a required CI tool, adheres to a standard dispatcher configuration structure.
+
+              <h2> 3] AEM Modules:</h2>
+
+              <b> AEM Sites:</b><br><br>
+              Enables the authoring and management of content pages.<br><br>
+              <b> AEM Assets:</b><br>
+              Facilitates the authoring and management of assets.<br><br>
+              <b> AEM Forms:</b><br>
+              <ul>
+                <li>Provides the capability to create, update, publish, and manage forms at runtime.</li>
+                <li> Allows adding, updating, and deleting fields in AEM Forms.</li>
+              </ul>
+              <b> AEM Headless:</b>
+              <ul>
+                <li> Utilizes an architecture that separates frontend and backend applications.</li>
+                <li> Exposes data through the backend in predefined formats (JSON, XML, etc.) for consumption by third-party
+                  frontend applications.</li>
+                <li> Achieved through GraphQL queries, Content, and experience fragments</li>
+              </ul>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <div class="post-footer">
+          <div class="footer-post-content">
+
+              <div class="post-tags">
+                <a class="label-link" href="/#ß"
+                  rel="tag">Marketing</a>
+                <a class="label-link" href="/#"
+                  rel="tag">Technology</a>
+              </div>
+              
+              <div id="MetaButtons" class="post-meta">
+                  <!---REPLACED BY MASTER-->
+              </div>
+
+              <div id="AboutAuthor" class="about-author">
+                <!---REPLACED BY MASTER-->
+              </div>
+
+          </div>
+    </div>
+
+  </div>
+
+  <div id="SiteFooter" class="footer">
+    <!---REPLACED BY MASTER-->
+  </div>
+</body>
+
+<script src="../master/masterContent.js"></script>
+<script src="../master/master.js"></script>
+
+<!--html injection -->

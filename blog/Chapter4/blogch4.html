@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="../master/master.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+      <div class="content">
+
+
+        <header id="TopNav" class="header-wrapper">
+          <!---REPLACED BY MASTER-->
+        </header>
+    
+        <div class="header">
+          <h2>Chapter 4 : SetUp An AEM Instance  </h2>
+        </div>
+    
+    
+        <div class="row">
+          <div class="leftcolumn">
+            <div class="card">
+    
+              <div class="postheading-drc">
+                <h5>Before initiating the instance creation process, let's delve into the distinct roles of two unique instances—author and publish—which are essential for end-to-end development.
+                </h5>
+              </div>
+              
+              <div class="post-meta">
+                <div class="meta-author-date">
+                  <div id="avatar" class="avatar">
+                    <!---REPLACED BY MASTER-->
+                  </div>
+    
+                  <div class="post-meta-top">
+                    <span id="post-author" class="post-author">
+                      <!---REPLACED BY MASTER-->
+                    </span> <br />
+                    <span class="post-time"><time class="published" datetime="2021-03-02T08:34:00-08:00">
+                      December 10 ,2023</time></span>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="clearer"></div>
+    
+              <div id="aem-img" class="fakeimg"></div>
+
+              <ul>                
+                    <li>
+                      <p>
+                        <h2> Author Instance : </h2>
+                        <img alt="AEM Author " src="img/ch4img1.png" /> 
+                      
+                        <ol>
+                          <li>The author instance is exclusively dedicated to content and asset authoring, a responsibility restricted to administrators and content authors. </li>
+                          <li> Typically, it is hosted on port 4502.</li>
+                          <li>Creating an AEM instance involves naming the AEM JAR file as cq65-author-p4502.jar.</li>
+                          <li>Content becomes accessible to the public or end users only after activation or publication.</li>
+                          <li>The button below facilitates the publishing of content to the publish environment.</li>
+                        </ol>
+                    </p>
+                    </li>
+
+
+
+                      <li>
+                          <ol>
+
+                            <h2>
+                              AEM Publish Instance:
+                            </h2>
+
+                            <li>The publish instance primarily functions as an end-user website, dedicated to the display of content without content editing or authoring capabilities. </li>
+                            <li> Typically, it is hosted on port 4503.</li>
+                            <li>To set up an AEM instance, the AEM JAR file must be named cq65-publish-p4503.jar.</li>
+                            <li>Content becomes accessible in the publish instance immediately upon activation, publication, or replication from the author instance.</li>
+                            <li>Unpublishing content is also an option, allowing the removal of content from the live site or restricting its availability to end users.</li>
+                            <li>The publish instance is commonly referred to as the publisher.</li>
+                            <li>In scenarios anticipating a large number of users, multiple publishers can be employed for a single author instance to distribute the page access load.</li>
+
+                        </ol> 
+                      </li>
+                      <br>
+                   
+
+              <li>
+                  <h2>AEM Instance Creation Process : </h2>
+                    <h3>
+                    Follow the steps below to create an AEM instance:<br>
+                    </h3>
+                    
+
+            <ol>           
+                      <li> 
+                        Creating an AEM instance requires both the AEM JAR file and a valid license in the same folder.   
+                      <img alt="AEM Author " src="img/ch4img2.png" /> 
+                    
+                      <p>
+                        <b>
+                          Note : AEM does not offer a free trial, as it is an enterprise application software.
+                        </b>
+                      </p>
+
+                    </li>
+
+
+                      <li>
+                        <ul>
+                          <li>Initiate the process of creating a new AEM instance by double-clicking on the JAR file. </li>
+                          <li>Once you click on the AEM JAR, the window below will open. </li>
+                          <li>The initial startup of AEM for the first time will require a substantial duration, approximately 15 to 20 minutes.</li> 
+                          <li> However, subsequent startups will be much quicker, taking a maximum of 5 minutes to launch the instance.</li>
+                        </ul>
+                      </li>
+
+                      <img alt="AEM Author " src="img/ch4img3.png" /> 
+
+                      <li>
+                          <ul>
+                            <li>
+                              <li>Once the AEM instance has successfully launched, it will automatically open a browser displaying the following page.</li>
+                              <li> Enter the username and password as 'admin,' which is the out-of-the-box (OOTB) default and can also be modified.</li>
+                            </li>
+                          </ul>              
+                          <img alt="AEM Author " src="img/ch4img4.png" /> 
+                      </li>
+
+
+                      <li>Upon successful login, the following screen will be displayed:</li>
+                      <img alt="AEM Author " src="img/ch4img5.png" /> 
+                  
+                      <li>
+                        Clicking on the question mark icon below will reveal the version of Adobe Experience Manager. Presently, the installed version is 6.5.0.
+                        <img alt="AEM Author " src="img/ch4img6.png" /> 
+                        <img alt="AEM Author " src="img/ch4img7.png" /> 
+                      </li>
+
+                      <li>
+                          <p> Here are the crucial URLs frequently used while working on AEM. These are provided for reference, and we will delve into them in more detail later.</p> 
+                          <ol>              
+                                  <li>Content Page URL for all content/website<br>
+                                  pageslocalhost:4502/sites.html/content
+                                  </li>
+                                  
+                                  <li> Asset/DAM Page URL for all media files:<br>
+                                  localhost:4502/sites.html/content
+                                  </li>
+
+                                  <li>Code Editor URL to access code files:<br>
+                                  localhost:4502/crx/de
+                                  </li>
+
+                                  <li>Package Manager URL to access, build, and install code and content packages:<br>
+                                  localhost:4502/crx/packmgr
+                                  </li>
+
+                                  <li>System Console Bundle to access all bundles or JAR files, helping check their status (install, active, resolved, etc.):<br>
+                                  localhost:4502/system/console/bundles
+                                  </li>
+
+                                  <li>System Console Components to inspect both out-of-the-box and custom components:<br>
+                                  localhost:4502/system/console/components
+                                  </li> 
+
+                                  <li> System Console Configurations to examine and manage all out-of-the-box or system-level configurations:<br>
+                                  localhost:4502/system/console/configMgr
+                                  </li>
+                          </ol>  
+                      
+                    </li>
+
+
+
+
+
+                    <li>
+                    <p> If a specific AEM version is required for a project, the latest Service Pack can be installed from the Adobe Software Distribution URL:</p>
+                    <a href=https://experience.adobe.com/#/downloads/content/software-distribution/en/aem.html >
+                      <img alt="AEM Author " src="img/ch4img8.png" /> 
+                    </li>
+                  
+
+
+                    <li>
+                      
+                          As part of the current installation, we will be installing the latest Service Pack, specifically version 6.5.11. <br>
+                          Please note that in your case, the version may differ or be higher.<br>
+                          Navigate to the CRX Package Manager to install the 6.5.11 service pack. <br><br>
+                          Click on the "Update Package" option highlighted in red:<br>
+                          localhost:4502/crx/packmgr<br>
+                          <img alt="AEM Author " src="img/ch4img9.png" /> 
+                    </li>
+                  
+
+
+                    <li>Choose the necessary service pack and click on "OK" to upload the zip file.<br>
+                      <img alt="AEM Author " src="img/ch4img10.png" /> 
+                    </li>
+
+
+
+
+                    <li>
+                      Clicking on the "Install" button, as indicated in the screenshot below, will initiate the installation of the service pack, upgrading the version from 6.5.0 to 6.5.11.0.
+                      <br>After the installation process is complete, kindly wait for at least 15 to 20 minutes.<br>
+                      <img alt="AEM Author " src="img/ch4img11.png" /> 
+                    </li>
+
+
+
+                      <li>
+                        Access the following URL to confirm the successful completion of the installation. If the page is not loading correctly or if an error is encountered, please wait for 10 minutes before reattempting.
+                        <br><img alt="AEM Author " src="img/ch4img12.png" />  
+                      </li>
+
+
+
+                      <li>
+                        The page below will load to indicate a successful installation:<br>
+                        <img alt="AEM Author " src="img/ch4img13.png" />  
+                      </li>
+
+                      
+
+                      <li>
+                        Verify the updated version once more by following step number 14, and it will display the revised version.<br>
+                        <img alt="AEM Author " src="img/ch4img14.png" />  
+                      
+                      <p>
+                        In a similar fashion, after creating the publish folder, you can establish a publish instance. Simply position both the JAR file (cq65-publish-p4503.jar) and the license file in the same publish folder.
+                      </p>
+                    
+                      <img alt="AEM Author " src="img/ch4img15.png" />  
+                    
+                    <p>
+                      <b>Note: </b>Typically, a publish instance is not created locally unless there is a specific need.<br>
+                      AEM comes with default Core Components and the We.Retail project out of the box, facilitating the exploration of core features and examples.<br>
+                      Further discussion on this will be covered in detail later.<br>
+                    </p>
+                    
+                    <img alt="AEM Author " src="img/ch4img16.png" />
+                    </li>
+              </ol>
+                   
+</li>
+</ul>
+          </div>
+          </div>
+
+        </div>
+    
+    
+        <div class="post-footer">
+              <div class="footer-post-content">
+    
+                  <div class="post-tags">
+                    <a class="label-link" href="/#ß"
+                      rel="tag">Marketing</a>
+                    <a class="label-link" href="/#"
+                      rel="tag">Technology</a>
+                  </div>
+                  
+                  <div id="MetaButtons" class="post-meta">
+                      <!---REPLACED BY MASTER-->
+                  </div>
+    
+                  <div id="AboutAuthor" class="about-author">
+                    <!---REPLACED BY MASTER-->
+                  </div>
+    
+              </div>
+        </div>
+    
+      </div>
+    
+      <div id="SiteFooter" class="footer">
+        <!---REPLACED BY MASTER-->
+      </div>
+
+
+
+
+
+</body>
+
+
+
+<script src="../master/masterContent.js"></script>
+<script src="../master/master.js"></script>
+
+<!--html injection -->

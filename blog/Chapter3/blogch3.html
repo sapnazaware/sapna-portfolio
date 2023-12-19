@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="../master/master.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+      <div class="content">
+
+
+        <header id="TopNav" class="header-wrapper">
+          <!---REPLACED BY MASTER-->
+        </header>
+    
+        <div class="header">
+          <h2>CHAPTER 3 : AEM Instances  </h2>
+        </div>
+    
+    
+        <div class="row">
+          <div class="leftcolumn">
+            <div class="card">
+    
+              <div class="postheading-drc">
+                <h5>To establish an end-to-end application in AEM, it is essential to have an author instance and at least one or more publish instances.</h5>
+              </div>
+              
+              <div class="post-meta">
+                <div class="meta-author-date">
+                  <div id="avatar" class="avatar">
+                    <!---REPLACED BY MASTER-->
+                  </div>
+    
+                  <div class="post-meta-top">
+                    <span id="post-author" class="post-author">
+                      <!---REPLACED BY MASTER-->
+                    </span> <br />
+                    <span class="post-time"><time class="published" datetime="2021-03-02T08:34:00-08:00">
+                      December 10 ,2023</time></span>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="clearer"></div>
+    
+              <div id="aem-img" class="fakeimg"></div>
+
+              <ul>                
+                    <li>
+                      <p>
+                        <h2> AEM Author:</h2>
+                        <img alt="AEM Author " src="img/ch3img1.png" /> 
+                        <img alt="AEM Author " src="img/ch3img2.png" />  
+                        <ol>
+                            <li>AEM Author instances are typically hosted on a remote server, operating on port 4502. </li>
+                            <li> The instance resides behind an internal firewall on the remote server, often necessitating VPN access. </li>
+                            <li>Users utilize the author instance to generate content and transfer it to Publishers through activation. </li>
+                            <li> Additionally, the author instance serves as the environment for generating reports on authoring activity, uploading DAM assets, configuring components, and executing actions not intended for the website's end users.</li>
+                            <li>The author instance holds authority over the content that gets published, allowing users to activate content for public visibility and deactivate it when necessary. </li>
+                            <li>This process is facilitated through replication agents.  </li>
+                            <li>The complete list of replication agents on the author instance can be viewed at /etc/replication/agents.author.html. </li>
+                            <li> To configure replication agents, users can access the Tool Admin page at /miscadmin#/etc/replication, where they can edit existing agents by selecting and adjusting settings. </li>
+                            <li> New replication agents are created through this admin page. </li>
+                            <li>Replication agents are configured with a URL and credentials pointing to the publish instance. </li>
+                            <li>The author instance transmits the content earmarked for publication to this URL (/bin/receive), and the publish instance processes the content, updating or creating pages/assets accordingly. </li>
+
+                        </ol>
+                    </p>
+                    </li>
+
+                  
+                  
+                    <p>The screenshot below illustrates the agents on the author page, highlighting the top three most commonly used replication agents, readily available by default.</p>
+
+                      <img alt="AEM Author " src="img/ch3img3.png" />
+                    <ol>
+                    <li>When conducting local code testing, it is typically performed on a local author instance. </li>
+                    <li>While this suffices for most scenarios, when evaluating styles on an author instance, it is advisable to append "?wcmmode=disabled" to the URL being viewed. </li>
+                    <li> This ensures a user experience closely aligned with what the end user will encounter.</li>
+                    </ol>
+
+
+
+                    <li>
+
+                      <h2>
+                        AEM Publish Instance:
+
+                        <img alt="Publish Instance" src="img/ch3img4.png" />
+                      </h2>
+                    
+                      <li>The AEM Publish instance is typically hosted on port 4503 or any port number which is odd number , providing accessibility for end users.</li>
+                      <li>From publish instance AEM author can publish the content for the end user.</li>
+                      <li>In the context of reverse replication, content is replicated or deactivated from the publish instance back to the author.</li>
+                      <li>The AEM publish instance serves as the repository for the published content, supplying the dispatchers with the necessary content for user display. </li>
+                      <li>Content is transferred from the author instance to the publish instance when an author activates specific content. </li>
+                      <li>Publish instances resemble author instances in functionality, except for the actual content authoring capability. </li>
+                      <li>If there is a need to inspect content in the JCR of the publish instance, you can directly access CRXDE at (crx/de/index.jsp) and log in to gain entry to all other tools.</li>
+                      <li> Similarly, as with author instances, code must be deployed directly to the publishers to ensure accessibility for the user-facing site. </li>
+                      <li>Typically, this deployment is facilitated through Jenkins, with specific Jenkins jobs linked to the publishers. </li>
+                    </li> 
+                    
+            
+            
+          
+          </ul>
+
+          </div>
+          </div>
+
+        </div>
+    
+    
+        <div class="post-footer">
+              <div class="footer-post-content">
+    
+                  <div class="post-tags">
+                    <a class="label-link" href="/#ß"
+                      rel="tag">Marketing</a>
+                    <a class="label-link" href="/#"
+                      rel="tag">Technology</a>
+                  </div>
+                  
+                  <div id="MetaButtons" class="post-meta">
+                      <!---REPLACED BY MASTER-->
+                  </div>
+    
+                  <div id="AboutAuthor" class="about-author">
+                    <!---REPLACED BY MASTER-->
+                  </div>
+    
+              </div>
+        </div>
+    
+      </div>
+    
+      <div id="SiteFooter" class="footer">
+        <!---REPLACED BY MASTER-->
+      </div>
+
+
+
+
+
+</body>
+
+
+
+<script src="../master/masterContent.js"></script>
+<script src="../master/master.js"></script>
+
+<!--html injection -->

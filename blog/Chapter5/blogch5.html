@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="Chapter1/blog.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+</style>
+</head>
+
+<body>
+
+
+
+<div class="header">
+    <h2>Blog Name</h2>
+  </div>
+  
+
+  <div class="row">
+    <div class="leftcolumn">
+      <div class="card">
+            <h2>TITLE HEADING</h2>
+            <h5>Title description, Dec 7, 2017</h5>
+            <div class="fakeimg" style="height:200px;">  <img alt="" src="" /></div>
+            <p>Some text..
+
+                OVERVIEW :
+
+                AEM, a Content Management System (CMS), is employed for crafting and launching commercial websites. Its framework empowers users to precisely manage content on public sites, effortlessly manipulate site content, and cache content for expedited delivery.
+                
+                
+                Standard AEM Configuration
+                The quantity of AEM instances may differ across environments, yet a complete AEM setup generally includes 
+                1]  Author instance
+                2] Publish instance
+                3] Dispatcher
+                4]  Load Balancer. 
+                
+                Each component has a specific function in managing and facilitating access to user-created content. In numerous scenarios, particularly in production, multiple publish instances and dispatchers are employed to ensure redundancy, enhance performance, and accommodate heightened traffic to the site.
+                
+                
+                Setting up an AEM instance can be done in two ways:
+                
+                * 		AEM on Prem:
+                    * Involves significant costs for licensing and infrastructure management.
+                    * Requires vigilant ownership as clients manage most aspects.
+                    * Upgrades is a  challenging task.
+                    * Code deployment can utilize Continuous Integration (CI) tools like Jenkins, Bamboo, ACM, etc.
+                    * 
+                
+                * 		AEM as a Cloud Service:
+                    * Operates as Software as a Service (SaaS), primarily managed by Adobe.
+                    * Features an architecture that auto-scales to accommodate additional instances as needed.
+                    * Reduces ownership costs since server, space, and upgrades are handled by Adobe.
+                    * Adobe recommends using their managed CDN, with client CDN pointing to it.
+                    * Cloud Manager, a required CI tool, adheres to a standard dispatcher configuration structure.
+                
+                AEM Modules:
+                
+                * AEM Sites:
+                    * Enables the authoring and management of content pages.
+                * AEM Assets:
+                    * Facilitates the authoring and management of assets.
+                * AEM Forms:
+                    * Provides the capability to create, update, publish, and manage forms at runtime.
+                    * Allows adding, updating, and deleting fields in AEM Forms.
+                * AEM Headless:
+                    * Utilizes an architecture that separates frontend and backend applications.
+                    * Exposes data through the backend in predefined formats (JSON, XML, etc.) for consumption by third-party frontend applications.
+                    * Achieved through GraphQL queries, Content, and experience fragments
+                
+
+
+
+
+
+
+
+
+
+            </p>
+        </div>
+    </div>
+
+    <div class="rightcolumn">
+      <div class="card">
+        <h2>About Me</h2>
+        <div class="fakeimg" ><img alt="sap" src="Chapter1/img_chap1/1sap.JPG" />
+        
+        </div>
+        <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+      </div>
+
+
+
+      <div class="card">
+        <h3>Popular Post</h3>
+        <div class="fakeimg">Image</div><br>
+        <div class="fakeimg">Image</div><br>
+        <div class="fakeimg">Image</div>
+      </div>
+
+
+
+      <div class="card">
+        <h3>Follow Me</h3>
+        <p>Some text..</p>
+      </div>
+
+
+    </div>
+  </div>
+  
+  <div class="footer">
+    <h2>Footer</h2>
+  </div>
+
+  </body>

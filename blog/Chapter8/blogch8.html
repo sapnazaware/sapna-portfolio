@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="../master/master.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="content">
+
+
+    <header id="TopNav" class="header-wrapper">
+      <!---REPLACED BY MASTER-->
+    </header>
+
+    <div class="header">
+      <h2>CHAPTER 8 : AEM Replication and Reverse Replication</h2>
+    </div>
+
+
+    <div class="row">
+      <div class="leftcolumn">
+        <div class="card">
+
+          <div class="postheading-drc">
+            <h5>Replication facilitates the transmission of content from an author to a publish AEM instance. </h5>
+          </div>
+
+          
+          <div class="post-meta">
+            <div class="meta-author-date">
+              <div id="avatar" class="avatar">
+                <!---REPLACED BY MASTER-->
+              </div>
+
+              <div class="post-meta-top">
+                <span id="post-author" class="post-author">
+                  <!---REPLACED BY MASTER-->
+                </span> <br />
+                <span class="post-time"><time class="published" datetime="2021-03-02T08:34:00-08:00">
+                  December 10 ,2023</time></span>
+              </div>
+            </div>
+          </div>
+
+              
+          <div class="clearer"></div>
+          <div id="aem-img" class="fakeimg"></div>
+
+          <p>
+     
+            <p>The AEM Author instance is typically hosted on port 4502, serving as an internal server primarily intended for content authoring. The content is then published or transferred to multiple AEM instances through content replication, also known as activation.
+            </p><br>
+
+            <p>Multiple publish AEM instances can be configured to accommodate the content replication process.</p><br>
+
+            <img alt="AEM Installation " src="img/ch8img1.png" /> 
+            <ul>
+              <li>
+                <h2>Replication Agent</h2>
+                <p>A replication agent is a configuration that facilitates the publishing of content from an author to a publish instance. It is necessary to create replication agents for each publish instance.</p><br>
+
+                <p>Follow the steps below to create a replication agent:
+                </p>
+
+                <ol>
+                    <li>
+                       Navigate to the following URL and select the Configuration tile:
+                    <a href="	http://localhost:4502/sites.html/content">
+                      <img alt="AEM Installation " src="img/ch8img2.png" /> 
+                    </li>
+
+                    <li> Navigate to the Replication option, where you will find the Agents on Author and Agents on Publish sections.
+                      <img alt="AEM Installation " src="img/ch8img3.png" /> 
+                    </li>
+
+                    <li>Choose the Agents on Author option, and click on "New" to create a new page, as highlighted in red below.
+                      <img alt="AEM Installation " src="img/ch8img4.png" /> 
+                    </li>
+
+                    <li>Choose the Replication Agent option, provide the necessary custom title, and click on the create button.
+                      <img alt="AEM Installation " src="img/ch8img5.png" /> 
+                    </li>
+
+                    <li>
+                    Select the created Replication Agent and click on the "Open" option.
+                    <img alt="AEM Installation " src="img/ch8img6.png" /> 
+                    </li>
+
+
+                    <li> Enable the replication agent by checking the "Enabled" checkbox.
+                      <img alt="AEM Installation " src="img/ch8img7.png" /> 
+                    </li>
+
+                    <li>Navigate to the Transport tab and enter the URI as :
+                    <p>https://<hostname>:4503/bin/receive?sling:authRequestLogin=1. </p>
+                   
+                    <p>For a local setup, it will be https://localhost:4503/bin/receive?sling:authRequestLogin=1.
+                      <br>Fill in the username and password.
+                      <br>Click the OK button to save the changes.</p>
+                      <img alt="AEM Installation " src="img/ch8img8.png" /> 
+                   
+                    </li>
+
+                    <li>
+                      Clicking on "Test Connection" will verify the connection between the author and the publish instances.
+                      <img alt="AEM Installation " src="img/ch8img9.png" /> 
+                    </li>
+
+                    <li>The successful connection between the author and publish instance will be indicated by the highlighted output below.
+                      <img alt="AEM Installation " src="img/ch8img10.png" /> 
+                    </li>
+
+                </ol>
+
+              </li>
+
+
+            <li>        
+              <h3>Replication Using Custom API</h3>
+              
+              <p>Utilize the com.day.cq.replication API for publishing or replicating a resource.
+
+              <br>Follow the steps below for custom resource replication:</p>
+              
+              <ol>
+                <li>1. Use the @Reference annotation to consume the Replicator OSGI service:
+                  java<br>
+               
+                  <b>@Reference </b><br>
+                 <b> Replicator replicator;</b>
+                </li>
+                             
+                <li> The replicate() method from the Replicator interface enables the publishing of content or a resource. Provide the session, replication type, and the content, asset, or resource path:
+                  java<br>
+                  <b>replicator.replicate(session, "Activate", resource_path);
+                </b>
+                </li>
+              </ol>   
+            </li>
+              
+              
+              
+          <li>
+            <h3>Reverse Replication</h3>
+            <p>
+              AEM Publish instances are typically hosted on port 4503 and are accessible to end users.
+              <br>As part of reverse replication, content is replicated or transferred from the publish instance to the author.
+              <img alt="AEM Installation " src="img/ch8img11.png" /> 
+            </p>
+
+            <p>
+              By default, only cq:Page is suitable for reverse replication. For other nodes, custom code is required.<br>
+                <br>To trigger reverse replication upon any content change, incorporate cq:lastModified, cq:lastModifiedBy, and cq:distribute properties as part of an event to activate the reverse replication agent.
+                <br>During activation, ensure to clear the cq:lastModified, cq:lastModifiedBy, and cq:distribute properties to prevent an infinite loop.
+            </p>
+          </li>
+
+
+          <li>
+            <h3>Reverse Replication Agent : </h3>
+            <p>Follow all the steps outlined in the Replication Agent section above, except for the 4th step.<br>
+            <br> In the 4th step, select the Reverse Replication Agent and provide the title as shown below.
+            </p>
+            <img alt="AEM Installation " src="img/ch8img12.png" /> 
+          </li>
+
+        </ul>
+        
+      </p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="post-footer">
+          <div class="footer-post-content">
+
+              <div class="post-tags">
+                <a class="label-link" href="/#ß"
+                  rel="tag">Marketing</a>
+                <a class="label-link" href="/#"
+                  rel="tag">Technology</a>
+              </div>
+              
+              <div id="MetaButtons" class="post-meta">
+                  <!---REPLACED BY MASTER-->
+              </div>
+
+              <div id="AboutAuthor" class="about-author">
+                <!---REPLACED BY MASTER-->
+              </div>
+
+          </div>
+    </div>
+
+  </div>
+
+  <div id="SiteFooter" class="footer">
+    <!---REPLACED BY MASTER-->
+  </div>
+</body>
+
+<script src="../master/masterContent.js"></script>
+<script src="../master/master.js"></script>
+
+<!--html injection -->

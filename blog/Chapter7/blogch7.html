@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="../master/master.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="content">
+
+
+    <header id="TopNav" class="header-wrapper">
+      <!---REPLACED BY MASTER-->
+    </header>
+
+    <div class="header">
+      <h2>CHAPTER 7  :  Verify Code Deployment </h2>
+    </div>
+
+
+    <div class="row">
+      <div class="leftcolumn">
+        <div class="card">
+
+          <div class="postheading-drc">
+            <h5>In a previous blog post, we created an AEM project using the AEM Maven archetype. For more information, please refer to this link. </h5>
+          </div>
+
+          
+          <div class="post-meta">
+            <div class="meta-author-date">
+              <div id="avatar" class="avatar">
+                <!---REPLACED BY MASTER-->
+              </div>
+
+              <div class="post-meta-top">
+                <span id="post-author" class="post-author">
+                  <!---REPLACED BY MASTER-->
+                </span> <br />
+                <span class="post-time"><time class="published" datetime="2021-03-02T08:34:00-08:00">
+                  December 10 ,2023</time></span>
+              </div>
+            </div>
+          </div>
+
+              
+          <div class="clearer"></div>
+          <div id="aem-img" class="fakeimg"></div>
+
+          <p>
+              <h1> Deploying  AEM Code </h1>
+              Before deploying the code, we need to set up a new AEM instance. Instructions for installing and configuring AEM can be found here.
+              Now, it's time to deploy the AEM project on the AEM instance using the following commands:              <br>
+            
+            <h2>AEM Installation Steps : </h2><br>
+
+
+      <ul>
+
+        <li> 
+          <h3>Step 1  : AEM Installation </h3><br>
+        
+              <ul>
+
+                <li>
+                  <b>Command 1 : </b>
+                  <br>This command cleans all the modules and deletes target folders.<br><br>
+                  <b> mvn clean install </b>
+                </li>
+
+
+                <li>
+                  <b>Command 2 : </b><br>
+                  This command deploys the code to the AEM author instance. <br>
+                  The autoInstallPackage and other profiles are generated at the time of project creation in the main pom.xml. It creates a zip file of HTML, CSS, .jar, and other resources, installing the same in the AEM author instance.<br>
+                    <b>mvn clean install -PautoInstallPackage</b>
+                </li>
+
+
+                <li>
+                  <b> Command 3 : </b><br>
+                  This command deploys the code to the AEM publish instance. <br>
+                  Similarly, the autoInstallPackagePublish profile is generated at the time of project creation in the main pom.xml. <br>
+                  It also creates a zip file of HTML, CSS, .jar, and other resources, installing them in the AEM publish instance.<br>
+
+                  <b>mvn clean install -PautoInstallPackagePublish </b>
+                </li>
+
+
+                <li>
+                  <b>Command 4 : </b><br>
+                   This command deploys only the Java code as a JAR file in the form of a bundle.<br>             
+                 <b> mvn clean install -PautoInstallBundle </b>
+                </li>
+
+              </ul>
+         </li>
+
+
+
+
+         <li>
+           <h3>Step 2 :  Code Deployment  </h3><br>
+            Navigate to the project's root practice folder and use the following command to deploy the code as part of the current deployment.<br>
+            It creates a zip file of HTML, CSS, .jar, and other resources, installing them in the AEM author instance.<br>
+            <b>mvn clean install -PautoInstallPackage </b> 
+
+            <img alt="AEM Installation " src="img/ch7img1.png" /> 
+            <p>Success messages for all modules.</p>
+
+            <img alt="AEM Installation " src="img/ch7img2.png" /> 
+         </li>
+              
+              
+        <li>
+          <h3>Step 3 : </h3>
+          <p>Access the <a href ="http://localhost:4502/crx/packmgr/index.jsp"  >URL and confirm the installation of the following essential packages after a successful build:</p>
+        </li>
+
+         <ol>
+          <li>practice.ui.content-1.0.0-SNAPSHOT.zip </li>
+          <li> practice.ui.apps-1.0.0-SNAPSHOT.zip</li>
+          <li>practice.ui.config-1.0.0-SNAPSHOT.zip</li>
+          <li> practice.all-1.0.0-SNAPSHOT.zip</li>
+          </ol>
+              
+          <img alt="AEM Installation " src="img/ch7img3.png" /> 
+      </ul>
+
+
+       <li>
+        <b>Step 4 : </b><br>
+        Visit the <a href="http://localhost:4502/crx/de/index.jsp ">URL and ensure that the highlighted code structure is present within the /apps/practice folder.
+          <img alt="AEM Installation " src="img/ch7img4.png" /> 
+        </li><br>
+
+          <li>
+            <b>Step 5 : </b><br>
+            To ensure a successful build, it is imperative to verify the installed bundle or JAR file immediately after the build. Its status must be active.<br>Visit
+          <a href="http://localhost:4502/system/console/bundles. ">  
+         
+            <img alt="AEM Installation " src="img/ch7img5.png" /> 
+          </li>
+    
+ 
+          </p>
+
+
+
+
+
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <div class="post-footer">
+          <div class="footer-post-content">
+
+              <div class="post-tags">
+                <a class="label-link" href="/#ß"
+                  rel="tag">Marketing</a>
+                <a class="label-link" href="/#"
+                  rel="tag">Technology</a>
+              </div>
+              
+              <div id="MetaButtons" class="post-meta">
+                  <!---REPLACED BY MASTER-->
+              </div>
+
+              <div id="AboutAuthor" class="about-author">
+                <!---REPLACED BY MASTER-->
+              </div>
+
+          </div>
+    </div>
+
+  </div>
+
+  <div id="SiteFooter" class="footer">
+    <!---REPLACED BY MASTER-->
+  </div>
+</body>
+
+<script src="../master/masterContent.js"></script>
+<script src="../master/master.js"></script>
+
+<!--html injection -->
