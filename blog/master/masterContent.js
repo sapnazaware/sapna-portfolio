@@ -48,7 +48,7 @@ var SiteFooter = `
 var MetaButtons = `
         <div  class="meta-button">
             <a class="twitter"
-              href="https://twitter.com/intent/tweet?url=https://webium-blogger.blogspot.com/2021/03/marketers-get-in-touch-with-your_2.html&amp;text=Marketers: Get in touch with your audience"
+              href="https://twitter.com/"
               rel="nofollow noopener noreferer" target="_blank" title="Twitter"><svg height="24" viewBox="0 0 24 24"
                 width="24">
                 <path
@@ -56,7 +56,7 @@ var MetaButtons = `
                 </path>
               </svg></a>
             <a class="linkedin"
-              href="https://www.linkedin.com/shareArticle?url=https://webium-blogger.blogspot.com/2021/03/marketers-get-in-touch-with-your_2.html"
+              href="https://www.linkedin.com/login"
               rel="nofollow noopener noreferer" target="_blank" title="LinkedIn"><svg height="24" viewBox="0 0 24 24"
                 width="24">
                 <path
@@ -64,7 +64,7 @@ var MetaButtons = `
                 </path>
               </svg></a>
             <a class="facebook"
-              href="https://www.facebook.com/sharer.php?u=https://webium-blogger.blogspot.com/2021/03/marketers-get-in-touch-with-your_2.html"
+              href="https://www.facebook.com/login.php/"
               rel="nofollow noopener noreferer" target="_blank" title="Facebook"><svg height="24" viewBox="0 0 24 24"
                 width="24">
                 <path
